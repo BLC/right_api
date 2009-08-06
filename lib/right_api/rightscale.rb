@@ -1,8 +1,8 @@
 require 'hpricot'
-require 'http_server'
-require 'accessible_fragment'
-
 require 'active_support'
+
+require 'right_api/http_server'
+require 'right_api/accessible_fragment'
 
 # Rightscale
 module RightScale
@@ -135,6 +135,9 @@ module RightScale
     def volume_rightscale_ids
       puts @@non_api_connection.get("/servers/#{id}/volumes").scan(/(?=ec2_ebs_volumes\/)\d+/).inspect
     end
+  end
+  
+  class RightScript < Base
   end
   
   class Ec2EbsVolume < Base
