@@ -6,6 +6,7 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = "#{ENV['GITHUB'] ? 'moneypools-' : ''}right_api"
     gem.summary = %Q{A ruby wrapper for the RightScale api}
+    gem.description = "A ruby wrapper for the RightScale api"
     gem.email = "mpdev@businesslogic.com"
     gem.homepage = "http://github.com/moneypools/right_api"
     gem.authors = ["MoneyPools"]
