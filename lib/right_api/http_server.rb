@@ -1,3 +1,6 @@
+require 'net/https'
+require 'cgi'
+
 class HttpServer
   attr_accessor :response_error_checker, :handle_errors, :headers
   attr_reader :last_response
@@ -9,7 +12,7 @@ class HttpServer
 
     @handle_errors = true
     @response_error_checker = Proc.new do |response, path|
-      response.include? 'errors' if response
+      false
     end
 
     @headers = {
